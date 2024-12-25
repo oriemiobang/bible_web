@@ -1,9 +1,12 @@
 const express = require('express');
 // const fs = require('fs');
 const bibleRoutes = require('./routes/bibleRoutes')
+const userRoute = require('./routes/user')
 const app = express();
 require('dotenv').config()
 const mongoose = require('mongoose')
+
+
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
@@ -12,6 +15,7 @@ app.use((req, res, next) => {
     next()
 })
 app.use('/api' ,bibleRoutes)
+app.use('/api/user' ,userRoute)
 
 
 
