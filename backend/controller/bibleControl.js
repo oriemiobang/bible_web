@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const f = require('../assets/holybooks/NT/1CO/ASV.json')
+// const f = require('../assets/holybooks/NT/1CO/ASV.json')
+
+const bibe = require('../model/userModel')
+const mongoose = require('mongoose')
 // get english
 const getEnglish = (req, res) => {
       const { testement, book, version } = req.params;
@@ -88,6 +91,11 @@ const getAmharic = (req, res) => {
         const books = JSON.parse(data);
         return res.json(books);
     });
+}
+
+const getAllData = async (req, res) => {
+    const user_id = req.params.user_id;
+    const user = await bible.find({user_id})
 }
 
 

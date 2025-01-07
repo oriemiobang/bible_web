@@ -2,6 +2,7 @@ const express = require('express');
 // const fs = require('fs');
 const bibleRoutes = require('./routes/bibleRoutes')
 const userRoute = require('./routes/user')
+const dataRoute = require('./routes/dataRoute')
 const app = express();
 require('dotenv').config()
 const mongoose = require('mongoose')
@@ -16,6 +17,8 @@ app.use((req, res, next) => {
 })
 app.use('/api' ,bibleRoutes)
 app.use('/api/user' ,userRoute)
+
+app.use('/api/data', dataRoute)
 
 
 

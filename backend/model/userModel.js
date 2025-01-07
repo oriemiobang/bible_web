@@ -31,7 +31,6 @@ UserSchema.statics.login = async function(email, password) {
         throw new Error('Incorrect password')
     }
     return user
-
 }
 
 // static sign up method 
