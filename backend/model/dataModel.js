@@ -3,31 +3,32 @@ const Schema = mongoose.Schema;
 
 
 const bookmarkSchema = new mongoose.Schema({
-    booktitle: {
+    // { verse, version, book, formattedDate };
+    book: {
         type: String,
         required: true
     },
-    time: {
-        type: Date,
-        required: true
-    },
-    bibleversion: {
+    formattedDate: {
         type: String,
         required: true
     },
-    text: {
+    version: {
+        type: String,
+        required: true
+    },
+    verse: {
         type: String,
         required: true
     }
 });
 
 const highlightSchema = new mongoose.Schema({
-    id: {
+    verseId: {
         type: String,
         required: true
     },
     color: {
-        type: String,
+        type: Number,
         required: true
     }
 });

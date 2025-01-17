@@ -67,6 +67,8 @@ const getDhaAnywaa = (req, res) => {
 
 }
 
+const displayBookMark = async ()=> {}
+
 
 // get amharic
 const getAmharic = (req, res) => {

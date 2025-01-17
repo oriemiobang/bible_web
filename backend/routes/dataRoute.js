@@ -4,8 +4,9 @@ const router = express.Router();
 
 const {
     getAllData,
-    getData,
+    addHighlight,
     createData,
+    addBookMark,
     updateData,
     deleteHighlight,
     deleteBookMark
@@ -20,10 +21,12 @@ router.use(requireAuth)
 router.get('/', getAllData)
 
 // get a single data 
-router.get('/:id', getData)
+// router.get('/:id', getData)
 
 // post a new data 
 router.post('/', createData)
+router.post('/highlight', addHighlight)
+router.post('/bookmark', addBookMark)
 
 // delete a data
 router.delete('/bookmark/:id', deleteBookMark)
@@ -32,6 +35,6 @@ router.delete('/bookmark/:id', deleteBookMark)
 router.delete('/highlight/:id', deleteHighlight)
 
 // update a data
-router.patch('/:id', updateData)
+router.patch('/highlight/:id', updateData)
 
 module.exports = router
