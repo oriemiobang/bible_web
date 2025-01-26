@@ -80,7 +80,7 @@ const getAmharic = (req, res) => {
     console.log(req.url);
 
     // Construct the file path dynamically
-    const filePath = path.join(__dirname, `../assets/holybooks/AM/${book}.json`);
+    const filePath = path.join(__dirname, `../assets/holybooks/AM/${book}`);
     //
 
     // Read the file
