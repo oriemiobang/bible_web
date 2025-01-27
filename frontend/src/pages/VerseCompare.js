@@ -504,6 +504,7 @@ const VerseCompare = ()=> {
 
   const { verseNumb, myNumber } = location.state || {};
   const numb = localStorage.getItem('bookNumber');
+  const backendUrl = 'https://bible-web.onrender.com';
 
 
   const availableVersions =[
