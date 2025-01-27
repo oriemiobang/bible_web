@@ -3,10 +3,9 @@
     "start": "node server.js",
     "build": "npm rebuild bcrypt --build-from-source && npm install",
     "postinstall": "chmod +x ./node_modules/.bin/node-pre-gyp",
-   "clean": "rimraf node_modules package-lock.json && npm install"
+    "clean": "rimraf node_modules package-lock.json && npm install"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
