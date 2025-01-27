@@ -6,10 +6,12 @@ const dataRoute = require('./routes/dataRoute')
 const app = express();
 require('dotenv').config()
 const mongoose = require('mongoose')
+var cors = require('cors')
 
 
 
 // Middleware to parse JSON request bodies
+app.use(cors())
 app.use(express.json());
 app.use((req, res, next) => {
     console.log(req.path, req.method)
