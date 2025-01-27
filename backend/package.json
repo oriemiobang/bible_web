@@ -2,7 +2,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "npm rebuild bcrypt --build-from-source && npm install",
-    "postinstall": "chmod +x ./node_modules/.bin/node-pre-gyp",
+    "postinstall": "node -e \"console.log('Postinstall script running')\"",
     "clean": "rimraf node_modules package-lock.json && npm install"
   },
   "dependencies": {
