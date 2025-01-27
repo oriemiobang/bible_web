@@ -21,9 +21,9 @@ app.use('/api/user' ,userRoute)
 app.use('/api/data', dataRoute)
 
 
+const port = process.env.MONGO_URL || 5000
 
-
-mongoose.connect(process.env.MONGO_URL).then(()=>{
+mongoose.connect(port).then(()=>{
     app.listen(process.env.PORT, () => {
         console.log(`Server is running on port ${process.env.PORT} and connected to db`);
     });
