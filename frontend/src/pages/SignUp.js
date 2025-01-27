@@ -9,11 +9,12 @@ const SignUp = ()=> {
     const [email , setEmail ] = useState('')
     const [password, setPassword ] = useState('')
     const {signup, error, isLoading } = useSignup();
+    const backendUrl = 'https://bible-web.onrender.com';
     const {user} = useAuthContext();
     const handleSubmit = async (e) =>{
         e.preventDefault();
     await signup(email, password).then((response)=> {
-        fetch('/api/data', {
+        fetch(`${backendUrl}/api/data`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

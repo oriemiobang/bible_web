@@ -10,12 +10,13 @@ const BookMark= ()=> {
 
     const [bookMark, setBookmarkData] = useState(null)
     const {user} = useAuthContext()
+    const backendUrl = 'https://bible-web.onrender.com';
 
     const fetchDatabase = () => {
         console.log("Fetching database...", user);
         if (user) {
           console.log('inside');
-          fetch('/api/data', {
+          fetch(`${backendUrl}/api/data`, {
             method: 'GET', // The HTTP method should be outside of headers
             headers: {
               'Authorization': `Bearer ${user.token}`,
@@ -48,7 +49,7 @@ const BookMark= ()=> {
         const bookmark = bookMark.filter(item => item._id !== id);
         setBookmarkData(bookmark);
 
-         fetch(`/api/data/bookmark/${id}`, {
+         fetch(`${backendUrl}/api/data/bookmark/${id}`, {
             method: 'DELETE',
             headers: {
               'Authorization': `Bearer ${user.token}`,

@@ -538,11 +538,11 @@ const VerseCompare = ()=> {
       // console.log('here in fetch')
     let path = ""
     if(version === "ANY"){
-      path = `/api/any/${testement}/${book}`
+      path = `${backendUrl}/api/any/${testement}/${book}`
     }else if(version === "AMH"){
-      path = `/api/amh/${bookList[numb].amharic}`
+      path = `${backendUrl}/api/amh/${bookList[numb].amharic}`
     } else{
-      path = `/api/eng/${testement}/${book}/${version}`
+      path = `${backendUrl}/api/eng/${testement}/${book}/${version}`
     }
  
     fetch(path)

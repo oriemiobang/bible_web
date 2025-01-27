@@ -564,6 +564,7 @@ const [verseNumb, setVerseNumb] = useState(0);
   };
 
   const [itemCount, setItemCount] = useState([])
+  const backendUrl = 'https://bible-web.onrender.com';
   const {user} = useAuthContext()
   const handleAdd = () => {
     if(currentVersion === "AMH"){
@@ -725,12 +726,12 @@ const share = () => {
     const myNumb = localStorage.getItem('bookNumber');
     if(version === "ANY"){
     
-      path = `/api/any/${testement}/${book}`
+      path = `${backendUrl}/api/any/${testement}/${book}`
     }else if(version === "AMH"){
-      path = `/api/amh/${bookList[myNumb].amharic}`
+      path = `${backendUrl}/api/amh/${bookList[myNumb].amharic}`
         // path = `/api/amh/${bookList[myNumb].amharic}`
     } else{
-      path = `/api/eng/${testement}/${book}/${version}`
+      path = `${backendUrl}/api/eng/${testement}/${book}/${version}`
     }
     setLoading(true)
     
@@ -890,7 +891,7 @@ verseColor.map(async(verse)=> {
   try {
     setTextColor((prevTextColor) => [...prevTextColor, ...verseColor]);
     console.log(verse);
-      const response = await fetch('/api/data/highlight', {
+      const response = await fetch(`${backendUrl}/api/data/highlight`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -966,7 +967,7 @@ const handleBookMark = async () => {
     setTextList([])
   try {
 
-      const response = await fetch('/api/data/bookmark', {
+      const response = await fetch(`${backendUrl}/api/data/bookmark`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -995,7 +996,7 @@ if(user){
     verseList.map(async(verse)=> {
     const color = textColor.filter(item => item.verseId !== verse);
     setTextColor(color)
-     const response = await fetch(`/api/data/highlight/${verse}`, {
+     const response = await fetch(`${backendUrl}/api/data/highlight/${verse}`, {
        method: 'DELETE',
        headers: {
            'Content-Type': 'application/json',
