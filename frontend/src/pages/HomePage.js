@@ -564,7 +564,7 @@ const [verseNumb, setVerseNumb] = useState(0);
   };
 
   const [itemCount, setItemCount] = useState([])
-  const backendUrl = import.meta.env.REACT_APP_API_URL;
+  const backendUrl = process.env.REACT_APP_API_URL;
   console.log(backendUrl);
   const {user} = useAuthContext()
   const handleAdd = () => {
