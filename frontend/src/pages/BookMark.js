@@ -10,7 +10,7 @@ const BookMark= ()=> {
 
     const [bookMark, setBookmarkData] = useState(null)
     const {user} = useAuthContext()
-    const backendUrl = 'https://bible-web.onrender.com';
+    const backendUrl = process.env.VITE_BACKEND_URL;
 
     const fetchDatabase = () => {
         console.log("Fetching database...", user);

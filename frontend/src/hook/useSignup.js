@@ -7,7 +7,7 @@ export const useSignup = ()=> {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(null)
     const {dispatch} = useAuthContext()
-    const backendUrl = 'https://bible-web.onrender.com';
+    const backendUrl = process.env.VITE_BACKEND_URL;
 
     const signup = async (email, password) => {
 

@@ -9,7 +9,7 @@ const SignUp = ()=> {
     const [email , setEmail ] = useState('')
     const [password, setPassword ] = useState('')
     const {signup, error, isLoading } = useSignup();
-    const backendUrl = 'https://bible-web.onrender.com';
+    const backendUrl = process.env.VITE_BACKEND_URL;
     const {user} = useAuthContext();
     const handleSubmit = async (e) =>{
         e.preventDefault();
