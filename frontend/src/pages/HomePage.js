@@ -16,6 +16,8 @@ import { useAuthContext } from "../hook/useAuthContext";
 import { MdCancel } from "react-icons/md";
 // import { OrbitProgress } from 'react-spinners';
 import { PulseLoader } from 'react-spinners';
+require('dotenv').config()
+
 
 
 const HomePage  = ()=> {
@@ -564,7 +566,7 @@ const [verseNumb, setVerseNumb] = useState(0);
   };
 
   const [itemCount, setItemCount] = useState([])
-  const backendUrl = 'https://bible-web.onrender.com';
+  const backendUrl = `${process.env.BACKEND_URL}`;
   const {user} = useAuthContext()
   const handleAdd = () => {
     if(currentVersion === "AMH"){
@@ -731,7 +733,7 @@ const share = () => {
       path = `${backendUrl}/api/amh/${bookList[myNumb].amharic}`
         // path = `/api/amh/${bookList[myNumb].amharic}`
     } else{
-      path = `${backendUrl}/api/eng/${testement}/${book}/${version}`
+      path = `${backendUrl}/api/eng/${testement}/${book}/${currentVersion}`
     }
     setLoading(true)
     
