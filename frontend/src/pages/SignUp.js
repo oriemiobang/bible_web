@@ -3,13 +3,16 @@ import bible_img from '../assets/bible_img.png'
 import { useSignup } from "../hook/useSignup"
 import { useState } from "react";
 import { useAuthContext } from "../hook/useAuthContext";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 const SignUp = ()=> {
 
     const [email , setEmail ] = useState('')
     const [password, setPassword ] = useState('')
     const {signup, error, isLoading } = useSignup();
-    const backendUrl = process.env.VITE_BACKEND_URL;
+    const backendUrl = process.env.REACT_APP_API_URL;
     const {user} = useAuthContext();
     const handleSubmit = async (e) =>{
         e.preventDefault();

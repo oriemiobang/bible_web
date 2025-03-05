@@ -5,12 +5,15 @@ import { PiBookmarksSimpleFill } from "react-icons/pi";
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import { useAuthContext } from "../hook/useAuthContext";
 import { MdDelete } from "react-icons/md";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 const BookMark= ()=> {
 
     const [bookMark, setBookmarkData] = useState(null)
     const {user} = useAuthContext()
-    const backendUrl = process.env.VITE_BACKEND_URL;
+    const backendUrl = process.env.REACT_APP_API_URL;
 
     const fetchDatabase = () => {
         console.log("Fetching database...", user);

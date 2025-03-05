@@ -16,8 +16,8 @@ import { useAuthContext } from "../hook/useAuthContext";
 import { MdCancel } from "react-icons/md";
 // import { OrbitProgress } from 'react-spinners';
 import { PulseLoader } from 'react-spinners';
-require('dotenv').config()
-
+import dotenv from "dotenv";
+dotenv.config();
 
 
 const HomePage  = ()=> {
@@ -566,7 +566,8 @@ const [verseNumb, setVerseNumb] = useState(0);
   };
 
   const [itemCount, setItemCount] = useState([])
-  const backendUrl = `${process.env.BACKEND_URL}`;
+  const backendUrl = process.env.REACT_APP_API_URL;
+  console.log(backendUrl);
   const {user} = useAuthContext()
   const handleAdd = () => {
     if(currentVersion === "AMH"){

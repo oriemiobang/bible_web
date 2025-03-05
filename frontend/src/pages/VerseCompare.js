@@ -3,6 +3,9 @@ import { useLocation } from "react-router-dom";
 import { PulseLoader } from 'react-spinners';
 import { GoArrowLeft } from "react-icons/go";
 import { Link } from "react-router-dom"
+import dotenv from "dotenv";
+dotenv.config();
+
 const VerseCompare = ()=> {
 
   const bookList = [
@@ -504,7 +507,7 @@ const VerseCompare = ()=> {
 
   const { verseNumb, myNumber } = location.state || {};
   const numb = localStorage.getItem('bookNumber');
-  const backendUrl = process.env.VITE_BACKEND_URL;
+  const backendUrl = process.env.REACT_APP_API_URL;
 
 
   const availableVersions =[

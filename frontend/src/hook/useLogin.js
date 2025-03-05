@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext" 
 // import LogIn from "../pages/login";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 export const useLogin = ()=> {
 
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(null)
     const {dispatch} = useAuthContext()
-    const backendUrl = process.env.VITE_BACKEND_URL;
+    const backendUrl = process.env.REACT_APP_API_URL;
 
 
     const login = async (email, password) => {

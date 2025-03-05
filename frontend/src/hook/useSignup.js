@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext" 
+import dotenv from "dotenv";
+dotenv.config();
 
 
 export const useSignup = ()=> {
@@ -7,7 +9,7 @@ export const useSignup = ()=> {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(null)
     const {dispatch} = useAuthContext()
-    const backendUrl = process.env.VITE_BACKEND_URL;
+    const backendUrl = process.env.REACT_APP_API_URL;
 
     const signup = async (email, password) => {
 
