@@ -16,8 +16,6 @@ import { useAuthContext } from "../hook/useAuthContext";
 import { MdCancel } from "react-icons/md";
 // import { OrbitProgress } from 'react-spinners';
 import { PulseLoader } from 'react-spinners';
-import dotenv from "dotenv";
-dotenv.config();
 
 
 const HomePage  = ()=> {

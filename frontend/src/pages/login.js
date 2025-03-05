@@ -2,8 +2,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import bible_img from '../assets/bible_img.png';
 import { useState } from "react";
 import { useLogin } from "../hook/useLogin";
-import dotenv from "dotenv";
-dotenv.config();
+
 
 const LogIn = ()=> {
 

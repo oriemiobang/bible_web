@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext" 
 // import LogIn from "../pages/login";
-import dotenv from "dotenv";
-dotenv.config();
 
 
 export const useLogin = ()=> {

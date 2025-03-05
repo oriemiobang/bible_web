@@ -3,8 +3,6 @@ import bible_img from '../assets/bible_img.png'
 import { useSignup } from "../hook/useSignup"
 import { useState } from "react";
 import { useAuthContext } from "../hook/useAuthContext";
-import dotenv from "dotenv";
-dotenv.config();
 
 
 const SignUp = ()=> {

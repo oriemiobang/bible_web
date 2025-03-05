@@ -5,8 +5,7 @@ import { PiBookmarksSimpleFill } from "react-icons/pi";
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import { useAuthContext } from "../hook/useAuthContext";
 import { MdDelete } from "react-icons/md";
-import dotenv from "dotenv";
-dotenv.config();
+
 
 
 const BookMark= ()=> {
