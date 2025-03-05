@@ -929,6 +929,7 @@ const handlePageIndex = (index)=>{
 }
 
 const handleBookMark = async () => {
+  console.log('handling bookmark')
   if(user){
     let myBook=''
     let wholeBookmark = ''
