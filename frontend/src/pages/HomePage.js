@@ -722,7 +722,9 @@ const share = () => {
 
 
   const fetchData = (testement, book )=> {
-    let version = localStorage.getItem('selectedVersion')
+    // let version = localStorage.getItem('selectedVersion')
+    let version = selectedVersion
+    // let version = 'ANY'
     let path = ""
     const myNumb = localStorage.getItem('bookNumber');
     if(version === "ANY"){
